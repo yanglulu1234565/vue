@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/v2.6.10/vue.js" type="text/javascript" charset="utf-8">
+		</script>
+	</head>
+	<body background="./img/57c9225da29ac.jpeg">
+		<div id="app" align="center">
+			<table id="div" border="1" width="300px" height="200px" background="./img/4.jpeg"><br />
+				<tr>
+					<th>
+					<input type="text" id="" name="" value="" v-model="inputNumber" />
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="button" @click="calc1()" name="" id="" value="计算二进制转十进制" />
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="button" @click="calc2()" name="" id="" value="计算十进制转二进制" />		
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="button" @click="calc3()" name="" id="" value="计算二进制转八进制" />
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="button" @click="calc4()" name="" id="" value="计算八进制转二进制" />
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="button" @click="calc5()" name="" id="" value="计算二进制转十六进制" />
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="button" @click="calc6()" name="" id="" value="计算十六进制转二进制" />
+					</th>
+				</tr>
+			</table>
+		</div>
+		<script type="text/javascript">
+			let v = new Vue({
+				el: "#app",
+				data: {
+					inputNumber: 0,
+					outputNumber: 0
+				},
+				methods: {
+					calc1() {
+						v.outputNumber = parseInt(v.inputNumber, 2);
+						alert("转换结果为：" + v.outputNumber);
+					},
+					calc2() {
+						v.outputNumber = parseInt(v.inputNumber, 10).toString(2);
+						alert("转换结果为：" + v.outputNumber);
+					},
+					calc3() {
+						v.outputNumber = parseInt(v.inputNumber, 2).toString(8);
+						alert("转换结果为：" + v.outputNumber)
+					},
+					calc4() {
+						v.outputNumber = parseInt(v.inputNumber, 8).toString(2);
+						alert("转换结果为：" + v.outputNumber)
+					},
+					calc5() {
+						v.outputNumber = parseInt(v.inputNumber, 2).toString(16);
+						alert("转换结果为：" + v.outputNumber)
+					},
+					calc6() {
+						v.outputNumber = parseInt(v.inputNumber, 16).toString(2);
+						alert("转换结果为：" + v.outputNumber)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
